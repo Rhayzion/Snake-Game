@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    
+body {
+    background-color: #1a1a1a; /* Dark background color */
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+  
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-color: #1a1a1a; }
+    50% { background-color: #333; }
+    100% { background-color: #1a1a1a; }
+}
+
+body {
+    animation: backgroundAnimation 5s infinite;
+}
+
+    .btn-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 20px;
+        left: 0px;
+        width: 200px;
+        text-align: center;
+    }
+
+    
+    .btn-row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-row button {
+        margin: 0 5px;
+    }
+
+    .stop-button {
+        margin-top: 10px;
+    }
+
+    .score {
+        position: absolute;
+        top: 510px;
+        right: 10px;
+        font-size: 15px;
+        color: rgb(0,225,0);
+        z-index: 10;
+    }
+    canvas {
+    border: 1px solid #fff; /* White border */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Subtle glow */
+    
+    display: block;
+    margin: auto; /* Center the canvas on the page */
+}
+
+#game-over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#game-over h1 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    color: red;
+    
+}
+
+#game-over p {
+    font-size: .72rem;
+    margin-bottom: 2rem;
+}
+
+button {
+    border: none;
+    padding: 15px 20px;
+    background: linear-gradient(145deg, #333, #111); /* 3D effect */
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    margin: 5px 0;
+    border-radius: 12px; /* Rounded edges */
+    box-shadow: 0 5px #000; /* Shadow for 3D effect */
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+button:active {
+    transform: translateY(1.5px); 
+    box-shadow: 0 0 2px #444;
+}
+
+button:hover {
+    background: #444; /* Slight glow on hover */
+    
+}
+
+#restart-btn {
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    background: linear-gradient(145deg, #00ff00, #007f00); /* Green glow effect */
+    border: 2px solid #004f00;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 5px #004f00;
+}
+
+#restart-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px #004f00;
+}
+
+#restart-btn:hover {
+    background: linear-gradient(145deg, #00e600, #005700);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+
+
+
+
+</style>
+
+<body>
+    
+    
+</div>
+
+    <div id="controls" class="btn-block">
+        <button onclick="moveSnake('up')"><span class="fa fa-arrow-up"></span></button>
+
+        <div class="btn-row">
+            <button onclick="moveSnake('left')"><span class="fa fa-arrow-left"></span></button>
+            <button onclick="moveSnake('right')"><span class="fa fa-arrow-right"></span></button>
+        </div>
+
+        <div class="btn-row">
+            <button onclick="moveSnake('down')"><span class="fa fa-arrow-down"></span></button>
+        </div>
+
+       
+    </div>
+
+    <div class="score" id="score-display">Score: 0</div>
+
+<div id="game-over" style="display: none;">
+    <h1>Game Over</h1>
+    <p>Total Score: <span id="final-score">0</span></p>
+    <button id="restart-btn">Restart</button>
+</div>
+
+   <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.js"></script>
+   <script src="snake.js"></script>
+</body>
+</html>

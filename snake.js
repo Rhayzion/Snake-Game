@@ -4,7 +4,7 @@ let food;
 let score=0;
 
 function setup() {
-    createCanvas(windowWidth, 700);
+    createCanvas(innerWidth, innerHeight -200);
     snake = new Snake();
     food = new Food();
 

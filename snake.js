@@ -1,3 +1,7 @@
+
+
+
+
 let snake;
 let scale = 10;
 let food;
@@ -17,6 +21,7 @@ function draw() {
     snake.show();
     snake.update();
     food.show();
+    food.update();
     
     
 
@@ -112,12 +117,13 @@ this.bite = function() {
 
 
 this.eat = function(pos) {
-    if (this.x === pos.x && this.y === pos.y) {
+    if (dist(this.x, this.y, pos.x, pos.y) < 1) {
         this.body.push(this.body[this.body.length - 1].copy());
         return true;
     }
     return false;
 };
+
 
 
 

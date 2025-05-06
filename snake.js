@@ -112,13 +112,12 @@ this.bite = function() {
 
 
 this.eat = function(pos) {
-    if (dist(this.x, this.y, pos.x, pos.y) < 1) {
+    if (this.x === pos.x && this.y === pos.y) {
         this.body.push(this.body[this.body.length - 1].copy());
         return true;
     }
     return false;
 };
-
 
 
 
